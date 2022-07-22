@@ -595,19 +595,19 @@ ul {
 }
 
 /* Portfolio main */
-.portfolio-but-table {
+.chapter {
   display: flex;
   text-align: center;
   justify-content: center;
   margin-bottom: 50px;
 }
 
-.portfolio-hero-title {
+.portfolio__title {
   visibility: hidden;
   font-size: 0;
 }
 
-.portf-nav-buttons {
+.chapter__button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -620,44 +620,44 @@ ul {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portf-nav-buttons:focus,
-.portf-nav-buttons:hover {
+.chapter__button:focus,
+.chapter__button:hover {
   color: var(--title-text-color);
   background-color: var(--focus-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
 
-.portfolio-item + .portfolio-item {
+.chapter__item + .chapter__item {
   margin-left: 8px;
 }
 
 /* portfolio table */
-.portfolio-table {
+.portfolio__table {
   display: flex;
   flex-wrap: wrap;
 }
 
-.portf-table-item {
+.portfolio__item {
   margin-right: 30px;
   margin-bottom: 30px;
   box-sizing: border-box;
 }
 
-.portfolio-link:focus,
-.portfolio-link:hover {
+.portfolio__link:focus,
+.portfolio__link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portf-table-item:nth-child(3n) {
+.portfolio__item:nth-child(3n) {
   margin-right: 0;
 }
 
-.portf-table-item:nth-last-child(-n+3) {
+.portfolio__item:nth-last-child(-n+3) {
   margin-bottom: 0;
 }
 
-.portfolio-company-title {
+.portfolio__company {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -666,19 +666,19 @@ ul {
   margin-bottom: 4px;
 }
 
-.portfolio-link {
+.portfolio__link {
   display: block;
   text-decoration: none;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-text {
+.portfolio__type {
   font-size: 16px;
   line-height: 1.88;
   color: var(--last-text-color);
 }
 
-.portf-pad-div {
+.portfolio__block {
   padding: 20px 24px;
   border-left: 1px solid var(--portfolio-border);
   border-right: 1px solid var(--portfolio-border);
@@ -690,7 +690,7 @@ ul {
   overflow: hidden;
 }
 
-.thumb-text {
+.thubm__container {
   position: absolute;
   display: flex;
   content: "";
@@ -705,7 +705,7 @@ ul {
   justify-content: center;
 }
 
-.thumb-text-style {
+.thubm__text {
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
@@ -713,8 +713,8 @@ ul {
   max-width: 322px;
 }
 
-.portfolio-link:focus .thumb-text,
-.portfolio-link:hover .thumb-text {
+.portfolio__link:focus .thubm__container,
+.portfolio__link:hover .thubm__container {
   transform: translateY(0%);
 }
 
@@ -795,11 +795,15 @@ ul {
   align-items: center;
 }
 
-.form-field {
+.callback__field {
   position: relative;
 }
 
-.form-label {
+.callback__field + .callback__field {
+  margin-top: 28px;
+}
+
+.callback__label {
   display: block;
   position: absolute;
   top: 0;
@@ -811,7 +815,7 @@ ul {
   color: var(--last-text-color);
 }
 
-.form-input {
+.callback__input {
   margin: 0;
   width: 448px;
   height: 40px;
@@ -826,25 +830,33 @@ ul {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:not(:-moz-placeholder-shown) {
+.callback__input:not(:-moz-placeholder-shown) {
   border: 1px solid var(--hover-color);
 }
 
-.form-input:not(:-ms-input-placeholder) {
+.callback__input:not(:-ms-input-placeholder) {
   border: 1px solid var(--hover-color);
 }
 
-.form-input:not(:placeholder-shown),
-.form-input:focus,
-.form-input:hover {
+.callback__input:not(:placeholder-shown),
+.callback__input:focus,
+.callback__input:hover {
   border: 1px solid var(--hover-color);
 }
 
-.form-field + .form-field {
-  margin-top: 28px;
+.callback__input:focus ~ .callback__svg,
+.callback__input:hover ~ .callback__svg {
+  fill: var(--hover-color);
 }
 
-.form-textarea {
+.callback__svg {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.callback__textarea {
   margin: 0;
   width: 448px;
   height: 120px;
@@ -859,33 +871,26 @@ ul {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-textarea:not(:-moz-placeholder-shown) {
+.callback__textarea:not(:-moz-placeholder-shown) {
   border: 1px solid var(--hover-color);
 }
 
-.form-textarea:not(:-ms-input-placeholder) {
+.callback__textarea:not(:-ms-input-placeholder) {
   border: 1px solid var(--hover-color);
 }
 
-.form-textarea:not(:placeholder-shown),
-.form-textarea:focus,
-.form-textarea:hover {
+.callback__textarea:not(:placeholder-shown),
+.callback__textarea:focus,
+.callback__textarea:hover {
   border: 1px solid var(--hover-color);
-}
-
-.form-svg {
-  position: absolute;
-  top: 11px;
-  left: 12px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:focus ~ .form-svg,
-.form-input:hover ~ .form-svg {
-  fill: var(--hover-color);
 }
 
 .checkbox {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.checkbox__input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -896,21 +901,7 @@ ul {
   overflow: hidden;
 }
 
-.checkbox-field {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.chack-icon {
-  display: inline-flex;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--first-text-color);
-  border-radius: 2px;
-  margin-right: 7px;
-}
-
-.checkbox:checked + .chack-icon {
+.checkbox__input:checked + .chackbox__icon {
   border-color: var(--hover-color);
   background-color: var(--hover-color);
   background-image: url(../images/icon-check.svg);
@@ -918,7 +909,7 @@ ul {
   background-origin: border-box;
 }
 
-.form-label-topic {
+.chackbox__topic {
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -927,7 +918,16 @@ ul {
   color: var(--last-text-color);
 }
 
-.terms {
+.chackbox__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--first-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.checkbox__link {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
@@ -936,7 +936,7 @@ ul {
   color: #2196F3;
 }
 
-.submit-button {
+.callback__button {
   width: 200px;
   height: 50px;
   border: none;
@@ -955,7 +955,7 @@ ul {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.submit-button:focus,
-.submit-button:hover {
+.callback__button:focus,
+.callback__button:hover {
   background-color: var(--hero-button-color-focus);
 }/*# sourceMappingURL=main.css.map */
