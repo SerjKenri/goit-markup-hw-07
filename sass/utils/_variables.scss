@@ -21,3 +21,9 @@
     --hover-color: #2196F3;
     --primary-colo: #AFB1B8;
 }
+
+@mixin dflex-taling {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

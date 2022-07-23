@@ -55,19 +55,20 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    color: var(--title-text-color);
+    color: var(--footer-title-text-color);
 
     margin-bottom: 20px;
 }
 
 .social__list {
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    @include dflex-taling;
 }
 
-.social__item+.social__item {
-    margin-left: 10px;
+.social__item {
+    &+& {
+        margin-left: 10px;
+    }
+    
 }
 
 .social__link {
