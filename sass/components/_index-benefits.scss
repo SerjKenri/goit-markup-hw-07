@@ -36,9 +36,7 @@
 }
 
 .benefits__svg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-align-item;
 
     margin-bottom: 30px;
     height: 120px;

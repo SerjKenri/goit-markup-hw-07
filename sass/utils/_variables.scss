@@ -22,8 +22,14 @@
     --primary-colo: #AFB1B8;
 }
 
-@mixin dflex-taling {
+@mixin flex-aling-text {
     display: flex;
     text-align: center;
+    justify-content: center;
+}
+
+@mixin flex-align-item {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }

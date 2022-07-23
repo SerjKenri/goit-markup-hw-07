@@ -63,7 +63,8 @@
 .thubm__container {
     position: absolute;
 
-    display: flex;
+    @include flex-align-item;
+
     content: '';
 
     top: 0;
@@ -75,8 +76,7 @@
     height: 100%;
 
     background: rgba(33, 150, 243, 0.9);
-    align-items: center;
-    justify-content: center;
+
 
 
 }
